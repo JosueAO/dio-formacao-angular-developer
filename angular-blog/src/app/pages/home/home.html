@@ -1,10 +1,32 @@
 <app-menu-title></app-menu-title>
 
-<div class="container-articles">
-  <div class="article-main">
-    <app-big-card></app-big-card>
+<div class="container__articles">
+  <div class="articles__main">
+    <app-big-card
+      [Id]="articles[0].id"
+      [photoCover]="articles[0].photoCover"
+      [cardTitle]="articles[0].title"
+      [cardDescription]="articles[0].description">
+    </app-big-card>
   </div>
-  <div class="article-others">
 
+  <div class="articles__others">
+    <app-small-card
+      [Id]="articles[1].id"
+      [cardTitle]="articles[1].title"
+      [photoCover]="articles[1].photoCover">
+    </app-small-card>
+
+    <app-small-card
+      [Id]="articles[2].id"
+      [cardTitle]="articles[2].title"
+      [photoCover]="articles[2].photoCover">
+    </app-small-card>
+
+    <app-small-card
+      [Id]="articles[3].id"
+      [cardTitle]="articles[3].title"
+      [photoCover]="articles[3].photoCover">
+    </app-small-card>
   </div>
 </div>
