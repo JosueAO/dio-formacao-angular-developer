@@ -1,17 +1,38 @@
 .menu-title-container {
   color: #ffffff;
+  text-align: center;
  }
 
 .menu-title-container > h1 {
   margin-top: 15px;
   margin-bottom: 15px;
   font-size: 135px;
-  font-family: 'Segoe UI';
+  font-family: 'Open Sans', sans-serif;
   display: flex;
   justify-content: center;
+  font-weight: bold;
  }
 
  .menu-title-container > hr {
   margin-top: 20px;
   margin-bottom: 5px;
+  border: 1px solid #444;
+}
+
+/* Responsividade para dispositivos móveis */
+@media screen and (max-width: 600px) {
+  .menu-title-container > h1 {
+    font-size: 30px;
+  }
+
+  .menu-title-container > hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .menu-title-container > h1 {
+    font-size: 80px;
+  }
 }

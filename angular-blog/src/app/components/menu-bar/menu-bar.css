@@ -35,3 +35,20 @@
   color: #666;
   font-weight: bold;
 }
+
+/* Responsividade para dispositivos móveis */
+@media screen and (max-width: 600px) {
+  .container__menu-bar > ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .container__menu-bar > ul > li {
+    margin-right: 0;
+  }
+
+  .container__menu-bar > ul > li > span {
+    display: none;
+  }
+}

@@ -37,26 +37,36 @@
 .big-card-photo > img {
   width: 100%;
   height: auto;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 /* Responsividade */
 @media(min-width: 700px) {
   .container-big-card {
-    width: 200px;
+    width: 400px;
     margin-bottom: 0;
   }
 
   .big-card-photo > img {
-    min-width: 200px;
+    min-width: 400px;
+    max-width: 400px;
+    height: 250px;
   }
 }
 
 @media(min-width: 1000px) {
   .container-big-card {
-    width: 400px;
+    width: 500px;
   }
 
   .big-card-photo > img {
-    min-width: 400px;
+    min-width: 500px;
+    max-width: 500px;
+    height: 300px;
+  }
+
+  .big-card-title > h1 {
+    font-size: 24px;
   }
 }

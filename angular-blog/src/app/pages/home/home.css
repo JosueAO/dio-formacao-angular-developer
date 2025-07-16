@@ -1,5 +1,19 @@
 .container__articles {
   margin-top: 30px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.articles__main {
+  margin-bottom: 30px;
+}
+
+.articles__others {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 /* Responsividade */
@@ -8,5 +22,17 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 40px;
+    padding: 0 40px;
+  }
+
+  .articles__main {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+  }
+
+  .articles__others {
+    flex: 1;
+    max-width: 400px;
   }
 }
