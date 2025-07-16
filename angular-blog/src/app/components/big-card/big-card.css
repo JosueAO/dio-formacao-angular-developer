@@ -22,6 +22,18 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.big-card-title > h1 > a,
+.big-card-description > p > a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.big-card-title > h1 > a:hover,
+.big-card-description > p > a:hover {
+  color: #ccc;
+}
+
 .big-card-photo > img {
   width: 100%;
   height: auto;
