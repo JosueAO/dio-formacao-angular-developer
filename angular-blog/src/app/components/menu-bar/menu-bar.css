@@ -1,54 +1,279 @@
-.container__menu-bar {
-  margin-top: 15px;
+/* Navigation Bar Container */
+.navigation-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  margin-top: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  background: rgba(0, 0, 0, 0.95);
+  border-radius: 0 0 25px 25px;
+  border: 1px solid #333;
+  border-top: none;
+  backdrop-filter: blur(20px);
+  min-height: 60px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.container__menu-bar > ul {
+/* Social Links Section */
+.social-links {
+  display: flex;
+  align-items: center;
+}
+
+.social-links > ul {
   display: flex;
   flex-direction: row;
+  align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
+  gap: 8px;
 }
 
-.container__menu-bar > ul > li {
-  margin-right: 20px;
+.social-links > ul > li {
   list-style: none;
+  display: flex;
+  align-items: center;
 }
 
-.container__menu-bar > ul > li:last-child {
-  margin-right: 0;
-}
-
-.container__menu-bar > ul > li > a {
+.social-links > ul > li > a {
   color: #ffffff;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.container__menu-bar > ul > li > a:hover {
-  color: #ccc;
+.social-icon {
+  width: 18px;
+  height: 18px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
-.container__menu-bar > ul > li > span {
+/* Estilos específicos para imagens (logo DIO) */
+.social-icon[src] {
+  object-fit: contain;
+  border-radius: 2px;
+}
+
+.social-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.social-links > ul > li > a:hover {
+  color: #007bff;
+  background: rgba(0, 123, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.social-links > ul > li > a:hover .social-icon {
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+.separator {
   color: #666;
-  font-weight: bold;
+  margin: 0 4px;
+  font-size: 0.8rem;
+}
+
+/* Search Section */
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.search-section::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  height: 30px;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, #333, transparent);
+}
+
+.search-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border: none;
+  border-radius: 25px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  margin-left: 15px;
+}
+
+.search-toggle-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Botão Reflexões Marvel */
+.marvel-quotes-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #FFD700, #FF6B35, #DC143C);
+  border: none;
+  border-radius: 25px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.marvel-quotes-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.marvel-quotes-btn:hover::before {
+  left: 100%;
+}
+
+.marvel-quotes-btn:hover {
+  background: linear-gradient(135deg, #FF6B35, #DC143C, #8B0000);
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 20px rgba(255, 215, 0, 0.4),
+    0 0 30px rgba(220, 20, 60, 0.3);
+}
+
+.marvel-icon {
+  font-size: 1.1rem;
+  animation: marvelSparkle 2s infinite;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+}
+
+.marvel-text {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes marvelSparkle {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8));
+  }
+}
+
+.search-icon {
+  font-size: 1.1rem;
+  animation: searchPulse 2s infinite;
+}
+
+.search-text {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+@keyframes searchPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 /* Responsividade para dispositivos móveis */
-@media screen and (max-width: 600px) {
-  .container__menu-bar > ul {
+@media screen and (max-width: 768px) {
+  .navigation-bar {
     flex-direction: column;
     gap: 10px;
-    text-align: center;
+    padding: 10px 15px;
+    border-radius: 0 0 15px 15px;
+    min-height: auto;
   }
 
-  .container__menu-bar > ul > li {
-    margin-right: 0;
+  .social-links > ul {
+    gap: 4px;
   }
 
-  .container__menu-bar > ul > li > span {
+  .social-links > ul > li > a {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+
+  .search-section {
+    gap: 10px;
+  }
+
+  .search-toggle-btn,
+  .marvel-quotes-btn {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+
+  .marvel-text {
+    display: none; /* Esconder texto em mobile, mostrar só ícone */
+  }
+
+  .separator {
     display: none;
+  }
+
+  .search-section::before {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navigation-bar {
+    padding: 8px 12px;
+  }
+
+  .social-links > ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .search-text {
+    display: none;
+  }
+
+  .search-toggle-btn {
+    padding: 8px 12px;
   }
 }

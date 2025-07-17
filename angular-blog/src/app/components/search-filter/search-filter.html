@@ -1,0 +1,69 @@
+<div class="modal-overlay" *ngIf="isOpen" (click)="onBackdropClick($event)">
+  <div class="modal-window">
+    <div class="modal-header">
+      <h2 class="modal-title">
+        <span class="modal-icon">🔍</span>
+        Buscar & Filtrar Artigos
+      </h2>
+      <button class="close-btn" (click)="onCloseModal()" title="Fechar">
+        ✕
+      </button>
+    </div>
+
+    <div class="modal-content">
+      <div class="search-section">
+        <div class="search-input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Digite para buscar artigos..."
+            [value]="searchTerm"
+            (input)="onSearchChange($event)"
+            #searchInput
+          />
+          <button
+            *ngIf="searchTerm"
+            class="clear-search-btn"
+            (click)="clearFilters()"
+            title="Limpar busca"
+          >
+            ✕
+          </button>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <h3 class="filter-title">Filtrar por categoria:</h3>
+        <div class="category-filters">
+          <button
+            *ngFor="let category of categories"
+            class="category-btn"
+            [class.active]="selectedCategory === category.value"
+            (click)="onCategoryChange(category.value)"
+          >
+            <span class="category-icon">{{ category.icon }}</span>
+            <span class="category-label">{{ category.label }}</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="results-info" *ngIf="searchTerm || selectedCategory !== 'todos'">
+        <span class="filter-indicator">
+          <span *ngIf="searchTerm">Buscando por: "{{ searchTerm }}"</span>
+          <span *ngIf="searchTerm && selectedCategory !== 'todos'"> • </span>
+          <span *ngIf="selectedCategory !== 'todos'">Categoria: {{ getCategoryLabel() }}</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="action-btn secondary" (click)="clearFilters()">
+        🗑️ Limpar Filtros
+      </button>
+      <button class="action-btn primary" (click)="onCloseModal()">
+        ✅ Aplicar Filtros
+      </button>
+    </div>
+  </div>
+</div>

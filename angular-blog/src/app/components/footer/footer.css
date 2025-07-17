@@ -1,0 +1,232 @@
+/* Container Principal */
+.footer-container {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-top: 3px solid #333;
+  margin-top: 60px;
+  padding: 40px 0 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #dc143c, #ffd700, #1e90ff, transparent);
+}
+
+/* Conteúdo Principal */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Seções do Footer */
+.footer-brand h3 {
+  color: #ffd700;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.footer-brand p {
+  color: #ccc;
+  font-style: italic;
+}
+
+.footer-section h4 {
+  color: #dc143c;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.footer-section h4::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #dc143c, #ffd700);
+}
+
+/* Links do Footer */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-section ul li a:hover {
+  color: #ffd700;
+  transform: translateX(5px);
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+/* Redes Sociais no Footer */
+.social-links-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-links-footer a {
+  color: #ccc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 0;
+}
+
+.social-links-footer a:hover {
+  color: #1e90ff;
+  transform: translateX(5px);
+}
+
+.social-icon {
+  font-size: 1.2rem;
+}
+
+/* Ícones SVG e imagens no Footer */
+.social-icon-footer {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+/* Estilos específicos para imagem DIO */
+.social-icon-footer[src] {
+  object-fit: contain;
+  border-radius: 2px;
+}
+
+/* Hover effects para ícones do footer */
+.social-links-footer a:hover .social-icon-footer {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Símbolos Marvel */
+.marvel-symbols {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.symbol {
+  font-size: 1.5rem;
+  animation: marvelGlow 3s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.symbol:nth-child(1) { animation-delay: 0s; }
+.symbol:nth-child(2) { animation-delay: 0.5s; }
+.symbol:nth-child(3) { animation-delay: 1s; }
+.symbol:nth-child(4) { animation-delay: 1.5s; }
+
+/* Linha Divisória */
+.footer-divider {
+  max-width: 1200px;
+  margin: 30px auto 20px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #333, transparent);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-bottom p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+.footer-credits {
+  font-style: italic;
+  color: #888 !important;
+}
+
+/* Animações */
+@keyframes marvelGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px currentColor;
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
+    transform: scale(1.1);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .footer-brand h3 {
+    font-size: 1.3rem;
+  }
+
+  .social-links-footer {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .marvel-symbols {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 30px 0 15px;
+  }
+
+  .footer-content {
+    padding: 0 15px;
+    gap: 20px;
+  }
+
+  .footer-section h4 {
+    font-size: 1rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+  }
+}

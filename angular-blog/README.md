@@ -1,195 +1,239 @@
-# 🎬 Angular Blog - Universo Marvel & Entretenimento
+# 🎬 Angular Blog - Um Celeiro de Entretenimento Marvel 
 
 [![Angular](https://img.shields.io/badge/Angular-20.0.0-red)](https://angular.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8.2-blue)](https://www.typescriptlang.org/)
-[![DIO](https://img.shields.io/badge/DIO-Formação_Angular-orange)](https://www.dio.me/)
+[![TypeScript](https://img.shields.io/badge/Typ## 📖 Documentação Adicional
 
-Este é um projeto de blog desenvolvido em Angular como parte da **Formação Angular Developer** da [DIO.me](https://www.dio.me/), baseado no projeto original do instrutor Felipe Aguiar, mas modernizado com as mais recentes funcionalidades do Angular 20.
+- 📋 [Detalhes do Projeto](./README-PROJETO.md)
+- 🚀 [Guia de Commits](./COMMIT-GUIDE.md)
+- 📊 [Changelog Commit #9](./CHANGELOG-COMMIT-9.md)
+- 🖼️ [Screenshots do Projeto](./public/images/screenshots/)
+- 🎨 [Style Guide](./STYLE-GUIDE.md)
+- 📱 [Responsive Design](./RESPONSIVE-GUIDE.md)t-5.8.2-blue)](https://www.typescriptlang.org/)
+[![DIO](https://img.shields.io/badge/DIO-Formação_Angular-orange)](https://www.dio.me/)
+[![Marvel](https://img.shields.io/badge/Marvel-Universe-gold)](https://www.marvel.com/)
+
+Este é um projeto de blog desenvolvido em Angular como parte da **Formação Angular Developer** da [DIO.me](https://www.dio.me/), transformado em uma experiência imersiva do Universo Marvel com funcionalidades avançadas de busca, filtros e interatividade.
 
 **Projeto gerado com:** [Angular CLI](https://github.com/angular/angular-cli) versão 20.0.5
 
-## ✨ Características do Projeto
+## 🚀 Demonstração
 
-### 🎯 Funcionalidades Principais
-- **Blog responsivo** com design moderno e limpo
-- **Navegação dinâmica** entre artigos
-- **Sistema de roteamento** com parâmetros
-- **Componentes reutilizáveis** e modulares
-- **Design mobile-first** totalmente responsivo
-- **Integração com redes sociais**
+### 📸 **Screenshots do Projeto**
 
-### 🛠️ Tecnologias Utilizadas
-- **Angular 20.0.0** - Framework principal
-- **TypeScript 5.8.2** - Linguagem de programação
-- **Standalone Components** - Arquitetura moderna
-- **Server-Side Rendering (SSR)** - Performance otimizada
-- **Angular Router** - Navegação SPA
-- **CSS3** - Estilização responsiva
-- **Google Fonts** - Typography (Open Sans)
+<div align="center">
 
-### 🏗️ Arquitetura
+![Página Inicial](./public/images/screenshots/home-page.png)
+*Página inicial com layout responsivo, efeitos Marvel e navegação fixa*
+
+![Sistema de Busca](./public/images/screenshots/search-modal.png)
+*Modal de busca e filtros com efeito glassmorphism*
+
+![Citações Marvel](./public/images/screenshots/marvel-quotes.png)
+*Seção interativa de citações do Universo Marvel*
+
+![Design Responsivo](./public/images/screenshots/responsive-design.png)
+*Layout responsivo funcionando perfeitamente em dispositivos móveis*
+
+![Página de Artigo](./public/images/screenshots/article-page.png)
+*Página individual de artigo com navegação e design Marvel*
+
+</div>
+
+## ✨ Funcionalidades Avançadas
+
+### 🔍 Sistema de Busca e Filtros (Commit #9)
+- **Modal de busca** com efeito glassmorphism
+- **Filtros por categoria** (Filmes, Séries, HQs, Jogos, Teorias)
+- **Busca em tempo real** por título e conteúdo
+- **Interface responsiva** e intuitiva
+
+### 🎨 Experiência Marvel
+- **Efeitos neon** inspirados no universo Marvel
+- **Cores temáticas** (Iron Man, Captain America, Infinity Stones)
+- **Citações interativas** de personagens Marvel
+- **Navegação com efeitos visuais** modernos
+
+### 📱 Interface Moderna
+- **Barra de navegação fixa** com backdrop blur
+- **Sistema de paginação** (10 artigos por página)
+- **Back-to-top** com animação de foguete
+- **Ícones de redes sociais** integrados
+- **Layout responsivo** side-by-side
+
+### 🔥 **Destaques Visuais**
+- ✨ **Glassmorphism**: Modal de busca com efeito de vidro translúcido
+- 🎯 **Marvel Neon Effects**: Cards com brilho inspirado nos heróis
+- 🚀 **Micro-interactions**: Hover effects e transições suaves
+- 📱 **Mobile-First**: Design totalmente responsivo
+- 🎨 **Visual Consistency**: Identidade visual coesa em todo projeto
+
+## 🛠️ Arquitetura Técnica
+
+### **Stack Principal**
+- **Angular 20.0.0** - Framework com Standalone Components
+- **TypeScript 5.8.2** - Type-safe development
+- **RxJS** - Reactive programming com BehaviorSubject
+- **CSS3 + Animations** - Efeitos visuais avançados
+- **SVG Icons** - Gráficos escaláveis
+
+### **Padrões e Práticas**
+- **Service-based state management** (SearchService)
+- **Component composition** reutilizável
+- **Reactive forms** e observables
+- **Mobile-first design** responsivo
+- **SEO optimization** com SSR
+
+## 📁 Estrutura do Projeto
+
 ```
 src/
 ├── app/
-│   ├── components/         # Componentes reutilizáveis
-│   │   ├── big-card/      # Card principal de artigos
-│   │   ├── small-card/    # Cards secundários
-│   │   ├── menu-title/    # Cabeçalho do blog
-│   │   └── menu-bar/      # Barra de navegação social
-│   ├── pages/             # Páginas da aplicação
-│   │   ├── home/          # Página inicial
-│   │   └── content/       # Página de artigo individual
-│   ├── data/              # Serviços e dados
-│   │   ├── dataFake.ts    # Mock de dados dos artigos
+│   ├── components/              # Componentes reutilizáveis
+│   │   ├── big-card/           # Card principal de artigos
+│   │   ├── small-card/         # Cards secundários
+│   │   ├── menu-title/         # Cabeçalho do blog
+│   │   ├── menu-bar/           # Navegação fixa com social links
+│   │   ├── search-modal/       # Modal de busca e filtros
+│   │   ├── marvel-quotes/      # Citações do universo Marvel
+│   │   └── back-to-top/        # Botão voltar ao topo
+│   ├── pages/                  # Páginas da aplicação
+│   │   ├── home/               # Página inicial com paginação
+│   │   └── content/            # Artigo individual
+│   ├── services/               # Serviços e estado global
+│   │   └── search.service.ts   # Gerenciamento do modal de busca
+│   ├── data/                   # Dados e interfaces
+│   │   ├── dataFake.ts         # Mock de artigos Marvel
 │   │   └── article.interface.ts # Interface TypeScript
-│   └── app.routes.ts      # Configuração de rotas
-├── styles.css             # Estilos globais
-└── index.html             # Template principal
+│   └── assets/                 # Recursos estáticos
+│       └── images/
+│           ├── social/         # Ícones SVG das redes sociais
+│           └── screenshots/    # Capturas de tela do projeto
 ```
 
-> 📋 **Nota**: Para informações detalhadas sobre o projeto, objetivos de aprendizado e funcionalidades, consulte o arquivo [README-PROJETO.md](./README-PROJETO.md)
-
-## 🚀 Quick Start
+## 🚀 Como Executar o Projeto
 
 ### 📋 Pré-requisitos
-- Node.js 18.x ou superior
-- npm 9.x ou superior
-- Angular CLI 20.x
+- **Node.js** 18.x ou superior
+- **npm** 9.x ou superior
+- **Angular CLI** 20.x
 
-### 🛠️ Instalação
+### 🛠️ Instalação e Execução
 ```bash
-# Clone o repositório
+# 1. Clone o repositório
 git clone [url-do-repositorio]
-
-# Navigate para o diretório
 cd angular-blog
 
-# Instale as dependências
+# 2. Instale as dependências
 npm install
-```
 
-### 🚦 Executando o Projeto
-```bash
-# Modo desenvolvimento
+# 3. Execute em modo desenvolvimento
 npm start
-# ou
-ng serve
-
 # Acesse: http://localhost:4200
-```
 
-### 🏗️ Build para Produção
-```bash
-# Build otimizado
+# 4. Build para produção
 npm run build
-# ou
-ng build --configuration production
+
+# 5. Servir com SSR
+npm run serve:ssr:angular-blog
 ```
 
 ### 🧪 Testes
 ```bash
 # Testes unitários
 npm test
-# ou
-ng test
 
-# Testes end-to-end
-npm run e2e
+# Testes E2E
+ng e2e
 ```
 
-## 📚 Aprendizados e Conceitos Abordados
+## 🎯 Funcionalidades Implementadas
 
-### 🎯 Conceitos Angular Modernos
-- **Standalone Components** - Nova arquitetura sem NgModules
-- **Signals** - Reatividade otimizada (Angular 20)
-- **Server-Side Rendering** - Performance e SEO
-- **Component Communication** - @Input, @Output, e serviços
-- **Routing** - Navegação SPA com parâmetros dinâmicos
-- **TypeScript Interfaces** - Tipagem forte e segurança
+### ✅ Core Features
+- [x] **Componentes reutilizáveis** (Big Card, Small Card, Menu)
+- [x] **Roteamento dinâmico** com parâmetros
+- [x] **Layout responsivo** mobile-first
+- [x] **Navegação entre artigos** 
 
-### 🎨 Design & UX
-- **Mobile-First Design** - Responsividade prioritária
-- **CSS Grid & Flexbox** - Layouts modernos
-- **Hover Effects** - Interatividade visual
-- **Typography** - Google Fonts integration
-- **Color Theory** - Paleta consistente e acessível
+### ✅ Inovações Marvel (Commit #9)
+- [x] **Sistema de busca e filtros** com modal glassmorphism
+- [x] **Efeitos neon** temáticos do universo Marvel
+- [x] **Barra de navegação fixa** com blur backdrop
+- [x] **Citações interativas** de personagens Marvel
+- [x] **Sistema de paginação** (10 artigos por página)
+- [x] **Back-to-top** com animação de foguete
+- [x] **Ícones de redes sociais** integrados
+- [x] **Layout side-by-side** otimizado
+
+## 📚 Conceitos e Aprendizados
+
+### 🎯 Angular Avançado
+- **Standalone Components** - Arquitetura moderna sem NgModules
+- **Service-based State Management** - BehaviorSubject para estado global
+- **Component Communication** - @Input, @Output, e injeção de serviços
+- **Reactive Programming** - RxJS observables e operators
+- **Server-Side Rendering** - Performance e SEO otimizados
+
+### 🎨 Design & UX Moderno
+- **Glassmorphism** - Efeito de vidro em modais
+- **Neon Effects** - Animações CSS com box-shadow
+- **Marvel Theming** - Paleta de cores inspirada nos heróis
+- **Responsive Design** - Mobile-first com breakpoints
+- **Micro-interactions** - Hover effects e transições
 
 ### ⚡ Performance & Boas Práticas
 - **Lazy Loading** - Carregamento otimizado
 - **OnPush Change Detection** - Performance melhorada
-- **Semantic HTML** - Acessibilidade e SEO
-- **CSS Custom Properties** - Manutenibilidade
-- **Image Optimization** - Carregamento eficiente
+- **TypeScript Strict Mode** - Tipagem rigorosa
+- **SEO Optimization** - Meta tags e SSR
+- **Accessibility** - Semantic HTML e ARIA
 
 ## 🤝 Contribuindo
 
-Este projeto faz parte de uma formação educacional, mas contribuições são bem-vindas:
+Este projeto é educacional, mas contribuições são bem-vindas:
 
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
+1. **Fork** o repositório
+2. **Crie** uma branch: `git checkout -b feature/nova-funcionalidade`
+3. **Commit** suas mudanças: `git commit -m 'feat: adiciona nova funcionalidade'`
+4. **Push** para a branch: `git push origin feature/nova-funcionalidade`
+5. **Abra** um Pull Request
 
-## 📝 Licença
+## � Documentação Adicional
 
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+- 📋 [Detalhes do Projeto](./README-PROJETO.md)
+- 🚀 [Guia de Commits](./COMMIT-GUIDE.md)
+- 🎨 [Style Guide](./STYLE-GUIDE.md)
+- 📱 [Responsive Design](./RESPONSIVE-GUIDE.md)
 
-## 👨‍💻 Autor
+## 👨‍💻 Desenvolvedor
 
 **Josué Oliveira**
-- Portfolio: [Em desenvolvimento]
-- LinkedIn: [linkedin.com/in/josue-oliveira](https://linkedin.com/in/josue-oliveira)
-- GitHub: [github.com/josue-oliveira](https://github.com/josue-oliveira)
-- DIO: [dio.me/users/josue-oliveira](https://dio.me/users/josue-oliveira)
+- 🌐 Portfolio: *Em desenvolvimento*
+- 💼 LinkedIn: [linkedin.com/in/josue-oliveira](https://linkedin.com/in/josue-oliveira)
+- 🐱 GitHub: [github.com/josue-oliveira](https://github.com/josue-oliveira)
+- 🎓 DIO: [dio.me/users/josueao_estudos](https://dio.me/users/josueao_estudos)
 
 ## 🙏 Agradecimentos
 
-- **Felipe Aguiar** - Instrutor original do projeto
-- **DIO.me** - Plataforma de aprendizado
-- **Angular Team** - Framework excepcional
-- **Comunidade Angular Brasil** - Suporte e inspiração
+- **Felipe Aguiar** - Instrutor e mentor do projeto original
+- **DIO.me** - Plataforma de ensino excepcional
+- **Angular Team** - Framework incrível e documentação
+- **Marvel** - Inspiração visual e temática
+- **Comunidade Angular Brasil** - Suporte e aprendizado
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](./LICENSE) para mais detalhes.
 
 ---
 
-⭐ **Se este projeto te ajudou, deixe uma estrela!** ⭐
-```bash
-npm start
-# ou
-ng serve
-```
-Acesse: `http://localhost:4200/`
+<div align="center">
 
-### Build para Produção
-```bash
-npm run build
-```
+**⭐ Se este projeto te ajudou, deixe uma estrela! ⭐**
 
-### SSR (Server-Side Rendering)
-```bash
-npm run serve:ssr:angular-blog
-```
+*Desenvolvido com 💙 durante a Formação Angular Developer na DIO.me*
 
-## 🧪 Testes
+![Marvel](https://img.shields.io/badge/Universe-Marvel-red?style=for-the-badge&logo=marvel)
+![Angular](https://img.shields.io/badge/Framework-Angular_20-red?style=for-the-badge&logo=angular)
+![DIO](https://img.shields.io/badge/Formação-DIO.me-orange?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==)
 
-### Testes Unitários
-```bash
-npm test
-```
-
-### Testes E2E
-```bash
-ng e2e
-```
-
-## 📚 Recursos Adicionais
-
-- [Angular CLI Overview](https://angular.dev/tools/cli)
-- [README Detalhado do Projeto](./README-PROJETO.md)
-- [Guia de Commits](./COMMIT-GUIDE.md)
-
----
-
-**Formação**: Angular Developer - DIO.me  
-**Especialista**: Felipe Aguiar  
-**Desenvolvedor**: [Josué](https://www.dio.me/users/josueao_estudos)
+</div>

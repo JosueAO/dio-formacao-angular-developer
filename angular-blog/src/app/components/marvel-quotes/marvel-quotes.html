@@ -1,0 +1,49 @@
+<div class="marvel-quotes-container">
+  <div class="quotes-header">
+    <h2 class="quotes-title">
+      <span class="title-icon">💎</span>
+      Reflexões do Universo Marvel
+      <span class="title-icon">💎</span>
+    </h2>
+    <p class="quotes-subtitle">Sabedoria dos maiores heróis da história</p>
+  </div>
+
+  <div class="quote-card">
+    <div class="quote-content">
+      <div class="quote-text">
+        <span class="quote-mark">"</span>
+        {{ currentQuote.quote }}
+        <span class="quote-mark">"</span>
+      </div>
+
+      <div class="quote-attribution">
+        <div class="character-name">{{ currentQuote.character }}</div>
+        <div class="movie-name" *ngIf="currentQuote.movie">{{ currentQuote.movie }}</div>
+      </div>
+    </div>
+
+    <div class="quote-navigation">
+      <button class="nav-btn prev-btn" (click)="previousQuote()" title="Frase anterior">
+        <span class="nav-icon">‹</span>
+      </button>
+
+      <div class="quote-indicators">
+        <span
+          *ngFor="let quote of marvelQuotes; let i = index"
+          class="indicator"
+          [class.active]="i === currentQuoteIndex"
+          (click)="currentQuoteIndex = i">
+        </span>
+      </div>
+
+      <button class="nav-btn next-btn" (click)="nextQuote()" title="Próxima frase">
+        <span class="nav-icon">›</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Efeito decorativo Marvel -->
+  <div class="marvel-decoration">
+    <div class="glow-effect"></div>
+  </div>
+</div>

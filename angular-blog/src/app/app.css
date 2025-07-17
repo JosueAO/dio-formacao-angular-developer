@@ -1,5 +1,15 @@
+/* Ajuste para barra de navegação fixa */
+body {
+  padding-top: 80px;
+}
+
 header {
-  margin-top: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  margin-top: 0;
   display: flex;
   justify-content: center;
 }

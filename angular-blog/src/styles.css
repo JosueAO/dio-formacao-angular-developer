@@ -21,9 +21,7 @@ body {
 }
 
 /* Aplicar cor de fundo apenas no body para melhor performance */
-* {
-  background-color: inherit;
-}
+/* Removido: * { background-color: inherit; } - causava problemas */
 
 /* Links com melhor acessibilidade */
 a {
